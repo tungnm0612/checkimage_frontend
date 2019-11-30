@@ -4,6 +4,9 @@ import SearchField from "./SearchField";
 // import logo from "../img/Logo.png";
 import ProfilePanel from "./ProfilePanel";
 // import { Link } from "react-router-dom";
+import Home from './Home';
+import CheckImage from './CheckImage';
+import UploadImage from './UploadImage';
 
 class NavBar extends Component {
   render() {
@@ -11,13 +14,12 @@ class NavBar extends Component {
       <div className="navbar navbar-expand">
         <div className="container">
           <SearchField onSearchChanged={this.props.onSearchChanged} />
-          <div className="col-6 text-center">
-            {/* <Link to="/">
-              <img src={logo} alt="TechKids Logo" />
-            </Link> */}
-          </div>
+          <Home/>
+          <CheckImage/>
+          <UploadImage/>
           <ProfilePanel
             username={this.props.username}
+            id = {this.props.id}
             onLogin={this.props.onLogin}
           />
         </div>

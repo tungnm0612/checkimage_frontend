@@ -1,27 +1,93 @@
-body {
-  background: #dedede;
-}
 
 .navbar {
   background: #ffffff;
 }
 
-.main_content{
-  margin-top: 20px;
+.homeimg{
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
+.top-left {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+.background-home{
+  width: 100%;
+}
+.background-check{
+  width: 100%;
+}
+.background-upload{
+  width: 100%;
 }
 
-.girl_image {
-  background: #ffffff;
-  overflow: hidden;
-  box-shadow: 0 1px 1px #aaaaaa;
+
+.bgfont{
+  font-family: 'Pacifico', cursive;;
+}
+.wrapper {
+  z-index: 3;
+  position: relative;
+  padding-top: 100px;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.img-overlay:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.0;
+  z-index: 2
+}
+.btn-block {
+  border-radius: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-color: #64f38c;
+  background: linear-gradient(45deg, #52c234 0%, #64f38c 100%);
+  background: -moz-linear-gradient(45deg, #52c234 0%, #64f38c 100%);
+  background: -webkit-linear-gradient(45deg, #52c234 0%, #64f38c 100%);
+  box-shadow: 0px 15px 28px -5px #45b649;
+  -webkit-box-shadow: 0px 15px 28px -5px #45b649;
+  -moz-box-shadow: 0px 15px 28px -5px #45b649;
+   
+}
+.card {
+  box-shadow: 1px 11px 70px -20px rgba(0, 0, 0, 0.70);
 }
 
-.girl_image img{
-  margin-bottom: 10px;
+.fileimg{
+  padding-top: 50px;
+}
+.btncheck{
+  padding-top: 50px;
+}
+.btnlogin{
+  padding-top: 20px;
 }
 
-.girl_image h5,
-.girl_image p{
-  padding: 0 10px;
-  margin-bottom: 10px;
+.wrapper-upload{
+  padding-top: 200px;
 }
+
+.bg{
+  background-color: #343a40;
+}
+
+/* trang đăng ký tài khoản */

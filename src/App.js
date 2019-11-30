@@ -5,8 +5,12 @@ import "./App.css";
 import axios from "./axios";
 
 import HomeScreen from "./containers/HomeScreen";
-// import DetailScreen from "./containers/DetailScreen";
+import AdminScreen from "./containers/AdminScreen";
 import LoginScreen from "./containers/LoginScreen";
+import CheckImageScreen from './containers/CheckImageScreen';
+import UploadImageScreen from './containers/UploadImageScreen';
+import AddUserScreen from './containers/AddUserScreen';
+import ChangePassword from './containers/ChangePassword';
 
 import {Route, Switch, withRouter } from "react-router-dom";
 
@@ -71,17 +75,40 @@ class App extends Component {
                 />;
               }}
             />
-            {/* <Route
+            <Route
               exact
-              path="/images/:imageId"
+              path="/checkimage"
               render={props => {
-                return <DetailScreen
+                return <CheckImageScreen
                   {...props}
                   username={this.state.username}
                   onLogin={this._onLogin}
                 />;
               }}
-            /> */}
+            />
+            <Route
+              exact
+              path="/uploadimage"
+              render={props => {
+                return <UploadImageScreen
+                  {...props}
+                  username={this.state.username}
+                  id = {this.state.id}
+                  onLogin={this._onLogin}
+                />;
+              }}
+            />
+            <Route
+              exact
+              path="/admin"
+              render={props => {
+                return <AdminScreen
+                  {...props}
+                  username={this.state.username}
+                  onLogin={this._onLogin}
+                />;
+              }}
+            />
             <Route
               exact
               path="/login"
@@ -94,6 +121,25 @@ class App extends Component {
                   {...props}
                   username={this.state.username}
                   onLogin={this._onLogin}
+                />;
+              }}
+            />
+            <Route
+              exact
+              path="/admin/adduser"
+              render={props => {
+                return <AddUserScreen
+                  {...props}
+                  username={this.state.username}
+                  onLogin={this._onLogin}
+                />;
+              }}
+            />
+            <Route
+              exact
+              path="/admin/changepassword"
+              render={props => {
+                return <ChangePassword
                 />;
               }}
             />

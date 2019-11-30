@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "../axios";
 
 import NavBar from "../components/NavBar";
-// import MainContent from "../components/MainContent";
+import Footer from "../components/Footer";
 
 class HomeScreen extends Component {
   state = {
@@ -33,13 +33,19 @@ class HomeScreen extends Component {
     // );
 
     return (
-      <div>
+      <div className="bg">
         <NavBar
           onSearchChanged={this._onSearchChanged}
           username={this.props.username}
           onLogin={this.props.onLogin}
         />
-        
+        <div className="homeimg">
+          <img className="background-home" src="https://images.wallpaperscraft.com/image/camera_hand_desert_136040_1920x1080.jpg" alt="background-home" />
+          <div className="top-left">
+            <h1>Image <br/> & <br/>Photographer</h1>
+          </div>
+        </div>
+        <Footer/>
       </div>
     );
   }

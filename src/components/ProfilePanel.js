@@ -16,21 +16,21 @@ class ProfilePanel extends Component {
   render() {
     const display = this.props.username ? (
       <div>
-        <span className="navbar-text">Welcome, {this.props.username}</span>
+        <span className="navbar-text">Xin chào, {this.props.username} &ensp;</span>
         <button 
-          className="btn btn-primary btn-block"
+          className="btn btn-secondary btn-sm"
           onClick={this.logout}
         >
-          Logout
+          Đăng xuất
         </button>
       </div>
     ) : (
       <Link to="/login">
         <button
-          className="btn btn-primary btn-block"
+          className="btn btn-secondary btn-sm"
           // onClick={this.props.onLogin}
         >
-            Login
+            Đăng nhập
         </button>
       </Link>
     );
