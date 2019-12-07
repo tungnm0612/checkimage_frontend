@@ -3,13 +3,43 @@ import NavBar from '../components/NavBar';
 import axios from 'axios';
 import config from '../config';
 import Footer  from '../components/Footer';
+import web3 from '../web3';
+import image from '../image';
+// import enableMetamask from '../enableMetamask';
+import Web3 from 'web3';
 
 export default class UploadImageScreen extends Component {
     state = {
+
+    }
+
+    async componentDidMount(){
+        // await this.getImage();
+    }
+
+    getImage = async () => {
+        const Images = await image.methods.getImage().call();
+        this.setState({infoImage: Images})
+        // console.log(this.state.infoImage)
+
+        const infoImageObject = this.state.infoImage.map(a => {
+            return Object.assign({}, a)
+        });
         
+        console.log(infoImageObject);
+        this.setState({
+            infoImageObject: infoImageObject
+        })
+        // for (let index = 0; index < infoImageObject.length; index++) {
+        //     const element = infoImageObject[index];
+        //     if(element._hashImage === "hashimage1"){
+        //         console.log(element)
+        //         return
+        //     }
+        // }
     }
      
-    onChange=(evt) => {
+    onChange= async (evt) => {
         evt.preventDefault();
         this.setState({
             file: evt.target.files[0],
@@ -17,7 +47,8 @@ export default class UploadImageScreen extends Component {
         })
     }
 
-    onClick = (evt) => {
+
+    onClick = async (evt) => {
         evt.preventDefault()
         
         if (!this.state.file) {
@@ -37,17 +68,49 @@ export default class UploadImageScreen extends Component {
                 'content-type': 'multipart/form-data'
             }
         }
-        axios.post(config.rootPath + '/api/images/uploadimage',formData, configes).then(res => {
-            console.log('RES', res.data.fileNameInServer)
-            console.log(this.state.idUser)
-            let filePath = res.data.fileNameInServer
-            if (filePath) {
-                filePath = filePath.split('\\')[1]
+        axios.post(config.rootPath + '/api/images/hashuploadimage',formData, configes).then( async (res) => {
+            console.log(res.data.data);
+            // this.setState({
+            //     hashImage: res.data.data.hashImage
+            // })
+            await this.getImage();
+            for (let index = 0; index < this.state.infoImageObject.length; index++) {
+                const element = this.state.infoImageObject[index];
+                if(element._hashImage === res.data.data){
+                    alert("Ảnh của bạn đã có trên BlockChain");
+                    return
+                } else{
+                    if (index === this.state.infoImageObject.length - 1 && element._hashImage !== res.data.data) {
+                        this.setState({
+                            hashImage: res.data.data
+                        })
+                        //addImage to blockchain
+                        const acounts = await web3.eth.getAccounts();
+                        if (acounts.length === 0) {
+                            new Web3(window.ethereum.enable());
+                        } else {
+                            if (acounts.length > 0) {
+                                await image.methods.addImage(this.state.idUser, this.state.hashImage).send({from: acounts[0]}).on('transactionHash', (transactionHash) =>{
+                                    console.log(transactionHash);
+                                    axios.post(config.rootPath + '/api/images/addinfoimage', {
+                                        idUser: this.state.idUser,
+                                        hashImage: this.state.hashImage,
+                                        transactionHash: transactionHash
+                                    }).then(res =>{
+                                        console.log(res.data.message)
+                                    }).catch(err =>{
+                                        console.log(err)
+                                    })
+                                });
+                                await this.getImage();
+                            }
+                        }
+                    }
+                }
             }
-            alert(res.data.message);
-            window.location.href = '/uploadimage';
         })
     }
+
 
     render() {
         return (
@@ -76,7 +139,7 @@ export default class UploadImageScreen extends Component {
                                                     <input onChange = {this.onChange} type="file" className="form-control-file fileimg" name="uploadimage" id="uploadimage"></input>
                                                 </div>
                                                 <div className="btncheck">
-                                                    <button  onClick = {this.onClick} type="submit" className="btn btn-success btn-block btn-lg mb-2">Tải lên</button>
+                                                    <button  onClick = {this.onClick}  type="submit" className="btn btn-success btn-block btn-lg mb-2">Tải lên</button>
                                                 </div>
                                             </form>
                                         </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
+import config from './config';
 import axios from "./axios";
 
 import HomeScreen from "./containers/HomeScreen";
@@ -11,6 +11,7 @@ import CheckImageScreen from './containers/CheckImageScreen';
 import UploadImageScreen from './containers/UploadImageScreen';
 import AddUserScreen from './containers/AddUserScreen';
 import ChangePassword from './containers/ChangePassword';
+
 
 import {Route, Switch, withRouter } from "react-router-dom";
 
@@ -23,7 +24,7 @@ class App extends Component {
   componentDidMount() {
     //check login
     const access_token = window.localStorage.getItem("access_token")
-    axios.get("http://localhost:6969/api/auth/check?access_token="+access_token)
+    axios.get(config.rootPath + "/api/auth/check?access_token="+access_token)
       .then(response => {
         if(response.data.success){
           this.setState({
@@ -40,7 +41,7 @@ class App extends Component {
 
   _onLogin = (username, password) => {
     axios
-      .post("http://localhost:6969/api/auth/login", {
+      .post(config.rootPath + "/api/auth/login", {
         username: username,
         password: password
       })
@@ -113,10 +114,10 @@ class App extends Component {
               exact
               path="/login"
               render={props => {
-                if(this.state.username){
-                  props.history.push("/");
-                  return "";
-                }
+                // if(this.state.username){
+                //   props.history.push("/");
+                //   return "";
+                // }
                 return <LoginScreen
                   {...props}
                   username={this.state.username}

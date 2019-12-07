@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 
-import axios from "../axios";
+// import axios from "../axios";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 class HomeScreen extends Component {
   state = {
-    images: [],
+    // images: [],
     searchString: ""
   };
 
   componentDidMount() {
-    axios
-      .get("/api/images")
-      .then(data => {
-        console.log(data.data);
-        this.setState({
-          images: data.data
-        });
-      })
-      .catch(err => console.error(err));
+    // axios
+    //   .get("/api/images")
+    //   .then(data => {
+    //     console.log(data.data);
+    //     this.setState({
+    //       images: data.data
+    //     });
+    //   })
+    //   .catch(err => console.error(err));
   }
 
   _onSearchChanged = text => this.setState({ searchString: text });
