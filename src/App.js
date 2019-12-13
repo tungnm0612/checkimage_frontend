@@ -11,6 +11,7 @@ import CheckImageScreen from './containers/CheckImageScreen';
 import UploadImageScreen from './containers/UploadImageScreen';
 import AddUserScreen from './containers/AddUserScreen';
 import ChangePassword from './containers/ChangePassword';
+import PersonalScreen from './containers/PersonalScreen';
 
 
 import {Route, Switch, withRouter } from "react-router-dom";
@@ -141,6 +142,17 @@ class App extends Component {
               path="/admin/changepassword"
               render={props => {
                 return <ChangePassword
+                />;
+              }}
+            />
+            <Route
+              exact
+              path="/personal"
+              render={props => {
+                return <PersonalScreen
+                  {...props}
+                  username={this.state.username}
+                  onLogin={this._onLogin}
                 />;
               }}
             />

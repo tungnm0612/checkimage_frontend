@@ -9,6 +9,7 @@ export default class Home extends Component {
                     <Link className="" to="/">
                         TRANG CHỦ 
                     </Link>
+                    {/* <a href="/">Trang chur</a> */}
                 </div>
             </div>
         )

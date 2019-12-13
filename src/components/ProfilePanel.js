@@ -15,14 +15,23 @@ class ProfilePanel extends Component {
   }
   render() {
     const display = this.props.username ? (
-      <div>
-        <span className="navbar-text">Xin chào, {this.props.username} &ensp;</span>
+      <div class="form-inline my-2 my-lg-0">
+        <a class="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Xin chào, {this.props.username}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/personal">Trang cá nhân</a>
+          {/* <a class="dropdown-item" href="#">Another action</a> */}
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" onClick={this.logout}>Đăng xuất</a>
+        </div>
+        {/* <span className="navbar-text">Xin chào, {this.props.username} &ensp;</span>
         <button 
           className="btn btn-secondary btn-sm"
           onClick={this.logout}
         >
           Đăng xuất
-        </button>
+        </button> */}
       </div>
     ) : (
       <Link to="/login">

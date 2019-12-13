@@ -4,6 +4,11 @@ import React, { Component } from "react";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import img04 from "../img/homePortfolioGrid/04-full.jpg"
+import iconsecuriry from '../img/icon/iconsecurity.png';
+import iconupload from '../img/icon/iconupload.png';
+import iconcheck from '../img/icon/iconcheck.png';
+
 
 class HomeScreen extends Component {
   state = {
@@ -34,18 +39,163 @@ class HomeScreen extends Component {
 
     return (
       <div className="bg">
-        <NavBar
-          onSearchChanged={this._onSearchChanged}
-          username={this.props.username}
-          onLogin={this.props.onLogin}
-        />
-        <div className="homeimg">
-          <img className="background-home" src="https://images.wallpaperscraft.com/image/camera_hand_desert_136040_1920x1080.jpg" alt="background-home" />
-          <div className="top-left">
-            <h1>Image <br/> & <br/>Photographer</h1>
-          </div>
+        <div className="">
+          <NavBar
+            onSearchChanged={this._onSearchChanged}
+            username={this.props.username}
+            onLogin={this.props.onLogin}
+          />
         </div>
-        <Footer/>
+        <header className="masthead">
+          <div className="container">
+            <div className="intro-text">
+              <div className="intro-lead-in">Chào Mừng Bạn Đến Với Website</div>
+              <div className="intro-heading text-uppercase">Nice To Meet You</div>
+              <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm Hiểu Thêm</a>
+            </div>
+          </div>
+        </header>
+
+        <section className="page-section" id="services">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <h2 className="section-heading text-uppercase">Dịch Vụ</h2>
+                <h3 className="section-subheading text-muted">Cho phép kiểm tra ảnh nguyên gốc và đăng tải ảnh lên hệ thống Blockchain một cách nhanh chóng, an toàn</h3>
+              </div>
+            </div>
+            <div className="row text-center">
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"><img src={iconcheck} alt=""/></i>
+                </span>
+                <br/><br/>
+                <h4 className="service-heading">Kiểm Tra Ảnh</h4>
+                <p className="text-muted">Hệ thống cho phép người dùng truy cập và kiểm tra trực tiếp trên hệ thống Blockchain những bức ảnh có phải ảnh nguyên gốc hay không một cách dễ dàng.</p>
+              </div>
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i className="fas fa-laptop fa-stack-1x fa-inverse"><img src={iconupload} alt=""/></i>
+                </span>
+                <br/><br/>
+                <h4 className="service-heading">Đăng Tải Ảnh</h4>
+                <p className="text-muted">Hệ thống cho phép những nhà nhiếp ảnh gia, những người có những bức ảnh đẹp muốn đăng ký bản quyền cho bức ảnh của mình bằng cách đăng tải bức ảnh lên hệ thống Blockchain.</p>
+              </div>
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i className="fas fa-lock fa-stack-1x fa-inverse"><img src={iconsecuriry} alt=""/></i>
+                </span>
+                <br/><br/>
+                <h4 className="service-heading">An Toàn, Bảo Mật</h4>
+                <p className="text-muted">Bởi vì bức ảnh được đăng tải lên hệ thống Blockchain nên dữ liệu không thể bị làm giả, bảo mật dữ liệu cao, các thông tin minh bạch, rõ ràng, chính xác.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* <!-- Portfolio Grid --> */}
+        <section className="bg-light page-section" id="portfolio">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <h2 className="section-heading text-uppercase">Portfolio</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt=""/>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Threads</h4>
+                  <p className="text-muted">Illustration</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt=""/>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Explore</h4>
+                  <p className="text-muted">Graphic Design</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt=""/>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Finish</h4>
+                  <p className="text-muted">Identity</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt=""/>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Lines</h4>
+                  <p className="text-muted">Branding</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt=""/>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Southwest</h4>
+                  <p className="text-muted">Website Design</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal6"> */}
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img className="img-fluid" src={img04} alt=""/>
+                {/* </a> */}
+                <div className="portfolio-caption">
+                  <h4>Window</h4>
+                  <p className="text-muted">Photography</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div>
+          <Footer/>
+        </div>
       </div>
     );
   }
