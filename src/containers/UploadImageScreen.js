@@ -21,7 +21,6 @@ export default class UploadImageScreen extends Component {
         })
     }
 
-
     onClick = async (evt) => {
         evt.preventDefault()
         
@@ -60,14 +59,14 @@ export default class UploadImageScreen extends Component {
                         onLogin={this.props.onLogin}
                     />
                 </div>
-                <header class="masthead-test bgUploadImage" >
-                    <div class="overlay"></div>
-                    <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="site-heading">
+                <header className="masthead-test bgUploadImage" >
+                    <div className="overlay"></div>
+                    <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 col-md-10 mx-auto">
+                        <div className="site-heading intro-lead-in">
                             <h1>Tải ảnh lên</h1>
-                            {/* <span class="subheading">A Blog Theme by Start Bootstrap</span> */}
+                            {/* <span className="subheading">A Blog Theme by Start Bootstrap</span> */}
                         </div>
                         </div>
                     </div>
@@ -77,7 +76,7 @@ export default class UploadImageScreen extends Component {
                     <div className="wrapper wrapper-upload" id="uploadimage">
                         <div className="container">
                             <div className="row">
-                                <div className="col-3"></div>
+                                <div className="col-3 uploadcol"></div>
                                 <div className="col">
                                     <div className="card card-upload">
                                         <div className="card-body text-dark title-upload">
@@ -95,7 +94,7 @@ export default class UploadImageScreen extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-3"></div>
+                                <div className="col-3 uploadcol"></div>
                             </div>
                         </div>
                     </div>

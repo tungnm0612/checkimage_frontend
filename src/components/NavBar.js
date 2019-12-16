@@ -32,13 +32,13 @@ class NavBar extends Component {
                 <a className="nav-link" href="/uploadimage">Tải ảnh lên</a>
               </li>
             </ul>
-            {/* <div className="form-inline my-2 my-lg-0"> */}
+            <div className="">
                 <ProfilePanel
                   username={this.props.username}
                   id = {this.props.id}
                   onLogin={this.props.onLogin}
                 />
-            {/* </div> */}
+            </div>
           </div>
         </nav>
       </div>

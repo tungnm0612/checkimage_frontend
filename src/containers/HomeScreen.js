@@ -4,11 +4,15 @@ import React, { Component } from "react";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import img04 from "../img/homePortfolioGrid/04-full.jpg"
 import iconsecuriry from '../img/icon/iconsecurity.png';
 import iconupload from '../img/icon/iconupload.png';
 import iconcheck from '../img/icon/iconcheck.png';
-
+import animal from "../img/homePortfolioGrid/animal.jpeg";
+import beach from "../img/homePortfolioGrid/beach.jpeg";
+import city from "../img/homePortfolioGrid/city.jpeg";
+import moutain from "../img/homePortfolioGrid/moutain.jpeg";
+import nature from "../img/homePortfolioGrid/nature.jpg";
+import travel from "../img/homePortfolioGrid/travel.jpeg";
 
 class HomeScreen extends Component {
   state = {
@@ -51,7 +55,7 @@ class HomeScreen extends Component {
             <div className="intro-text">
               <div className="intro-lead-in">Chào Mừng Bạn Đến Với Website</div>
               <div className="intro-heading text-uppercase">Nice To Meet You</div>
-              <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm Hiểu Thêm</a>
+              <a className="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm Hiểu Thêm</a>
             </div>
           </div>
         </header>
@@ -101,78 +105,78 @@ class HomeScreen extends Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 text-center">
-                <h2 className="section-heading text-uppercase">Portfolio</h2>
-                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 className="section-heading text-uppercase">Chủ Đề</h2>
+                <h3 className="section-subheading text-muted">Những bức ảnh lưu giữ lại những khoảnh khắc trong cuộc sống</h3>
               </div>
             </div>
             <div className="row">
               <div className="col-md-4 col-sm-6 portfolio-item">
-                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1"> */}
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt=""/>
-                </a>
+                  <img className="img-fluid" src={animal} alt=""/>
+                {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Threads</h4>
+                  <h4>Động Vật</h4>
                   <p className="text-muted">Illustration</p>
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
-                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal2"> */}
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt=""/>
-                </a>
+                  <img className="img-fluid" src={beach} alt=""/>
+                {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Explore</h4>
+                  <h4>Bãi Biển</h4>
                   <p className="text-muted">Graphic Design</p>
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
-                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal3"> */}
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt=""/>
-                </a>
+                  <img className="img-fluid" src={city} alt=""/>
+                {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Finish</h4>
+                  <h4>Thành Phố</h4>
                   <p className="text-muted">Identity</p>
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
-                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal4"> */}
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt=""/>
-                </a>
+                  <img className="img-fluid" src={moutain} alt=""/>
+                {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Lines</h4>
+                  <h4>Núi</h4>
                   <p className="text-muted">Branding</p>
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
-                <a className="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                {/* <a className="portfolio-link" data-toggle="modal" href="#portfolioModal5"> */}
                   <div className="portfolio-hover">
                     <div className="portfolio-hover-content">
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt=""/>
-                </a>
+                  <img className="img-fluid" src={travel} alt=""/>
+                {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Southwest</h4>
+                  <h4>Du Lịch</h4>
                   <p className="text-muted">Website Design</p>
                 </div>
               </div>
@@ -183,10 +187,10 @@ class HomeScreen extends Component {
                       <i className="fas fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img className="img-fluid" src={img04} alt=""/>
+                  <img className="img-fluid" src={nature} alt=""/>
                 {/* </a> */}
                 <div className="portfolio-caption">
-                  <h4>Window</h4>
+                  <h4>Thiên Nhiên</h4>
                   <p className="text-muted">Photography</p>
                 </div>
               </div>

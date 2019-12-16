@@ -32,18 +32,28 @@ export default class CheckImageScreen extends Component {
         }
         await axios.post(config.rootPath + '/api/images/checkimage', formData, configes).then( async (res) =>{
             console.log(res.data)
-            this.setState({
-                message: res.data.message,
-                email: res.data.infoPhotographer.email,
-                fullname: res.data.infoPhotographer.fullname,
-                transactionHash: res.data.infoPhotographer.transactionHash
-            })
+            if (res.data.status === true) {
+                this.setState({
+                    // status: res.data.status,
+                    message: res.data.message,
+                    email: res.data.infoPhotographer.email,
+                    fullname: res.data.infoPhotographer.fullname,
+                    transactionHash: res.data.infoPhotographer.transactionHash
+                })
+            } else {
+                if (res.data.status === false) {
+                    this.setState({
+                        // status: res.data.status,
+                        message: res.data.message
+                    })
+                }
+            }
         })
     }
     
     render() {
         
-        const info = this.state.email ? (
+        const info = this.state.message === "Ảnh của bạn là ảnh nguyên gốc" ? (
             // <div className="col">
             <div className="card-body-info text-dark">
                 <div className="card">
@@ -81,7 +91,7 @@ export default class CheckImageScreen extends Component {
                     <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="site-heading">
+                        <div class="site-heading intro-lead-in">
                             <h1>Kiểm tra ảnh</h1>
                             {/* <span class="subheading">A Blog Theme by Start Bootstrap</span> */}
                         </div>

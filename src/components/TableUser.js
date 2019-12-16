@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import config from '../config';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
+import AddUser from "../containers/AddUserScreen";
 
-export default class AdminScreen extends Component {
+export default class TableUser extends Component {
     state ={
         users: []
     }
@@ -29,22 +30,22 @@ export default class AdminScreen extends Component {
         })
     }
 
-    onchangeInputChangePassword = async (event) =>{
-        // event.preventDefault();
-        const changepassword = await event.target.value;
-        await this.setState({
-            changepassword: changepassword
-        })
-        await console.log(this.state.changepassword)
-    }
+    // onchangeInputChangePassword = async (event) =>{
+    //     // event.preventDefault();
+    //     const changepassword = await event.target.value;
+    //     await this.setState({
+    //         changepassword: changepassword
+    //     })
+    //     await console.log(this.state.changepassword)
+    // }
 
-    onChangeInputRetypePassword = async (event) => {
-        const retypepassword = await event.target.value; 
-        await this.setState({
-            retypepassword: retypepassword
-        })       
-        await console.log(this.state.retypepassword) 
-    }
+    // onChangeInputRetypePassword = async (event) => {
+    //     const retypepassword = await event.target.value; 
+    //     await this.setState({
+    //         retypepassword: retypepassword
+    //     })       
+    //     await console.log(this.state.retypepassword) 
+    // }
     
     onchangePassword = async (record) =>{
         // event.preventDefault()
@@ -56,9 +57,11 @@ export default class AdminScreen extends Component {
 
     onSubmitChangePassword = async (event) =>{
         event.preventDefault()
-        if (this.state.changepassword === this.state.retypepassword) {
+        const newpassword = document.getElementById("changepassword").value;
+        const retypepassword = document.getElementById("retypepassword").value
+        if (newpassword === retypepassword) {
             axios.put(config.rootPath + '/api/users/updatepassword', {
-                newpassword: this.state.changepassword,
+                newpassword: newpassword,
                 idUser: this.state.idUser
             }).then(res => {
                 // console.log(res.data.message)
@@ -229,11 +232,11 @@ export default class AdminScreen extends Component {
                                 <form onSubmit={this.onSubmitChangePassword}>
                                 <div className="form-group">
                                     <label htmlFor="recipient-name" className="col-form-label">Mật khẩu mới:</label>
-                                    <input onChange={this.onchangeInputChangePassword} type="password" className="form-control" name="changepassword" id="changepassword"/>
+                                    <input type="password" className="form-control" name="changepassword" id="changepassword"/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="message-text" className="col-form-label">Nhập lại mật khẩu:</label>
-                                    <input onChange={this.onChangeInputRetypePassword} type="password" className="form-control" name="retypepassword" id="retypepassword"/>
+                                    <input type="password" className="form-control" name="retypepassword" id="retypepassword"/>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Hủy</button>
@@ -272,8 +275,9 @@ export default class AdminScreen extends Component {
                     </tbody>
                 </table> */}
                 <div>
+                    <AddUser/>
                     {/* <button type="button" className="btn btn-secondary btn-lg">Tạo tài khoản</button> */}
-                    <Link className="btn btn-secondary btn-lg" to="/admin/adduser">Tạo tài khoản</Link>
+                    {/* <Link className="btn btn-secondary btn-lg" to="/admin/adduser">Tạo tài khoản</Link> */}
                 </div>
             </div>
             </div>

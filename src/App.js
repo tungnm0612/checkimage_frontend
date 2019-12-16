@@ -3,9 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import config from './config';
 import axios from "./axios";
+// import "antd/dist/antd.css";
 
 import HomeScreen from "./containers/HomeScreen";
-import AdminScreen from "./containers/AdminScreen";
+// import AdminScreen from "./containers/AdminScreen";
 import LoginScreen from "./containers/LoginScreen";
 import CheckImageScreen from './containers/CheckImageScreen';
 import UploadImageScreen from './containers/UploadImageScreen';
@@ -33,7 +34,7 @@ class App extends Component {
             id: response.data.user.id
           });
         }else {
-          this.props.history.push("/login")
+          // this.props.history.push("/")
         }
       }).catch(error =>{
         console.log(error)
@@ -100,7 +101,7 @@ class App extends Component {
                 />;
               }}
             />
-            <Route
+            {/* <Route
               exact
               path="/admin"
               render={props => {
@@ -110,7 +111,7 @@ class App extends Component {
                   onLogin={this._onLogin}
                 />;
               }}
-            />
+            /> */}
             <Route
               exact
               path="/login"
@@ -152,6 +153,7 @@ class App extends Component {
                 return <PersonalScreen
                   {...props}
                   username={this.state.username}
+                  id = {this.state.id}
                   onLogin={this._onLogin}
                 />;
               }}

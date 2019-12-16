@@ -5,57 +5,67 @@ import config from '../config';
 export default class AddUserScreen extends Component {
     onSubmit = (event) =>{
         event.preventDefault();
-        axios.post(config.rootPath + "/api/users/adduser", {
-            fullname: document.getElementById("inputFullname").value,
-            email: document.getElementById("inputEmail").value,
-            username: document.getElementById("inputUsername").value,
-            password: document.getElementById("inputPassword").value
-        }).then(res =>{
-            alert(res.data.message);
-            window.location.href = "/admin/adduser"
-        }).catch(err =>{
-            console.log(err)
-        })
+        const password = document.getElementById("inputPassword").value;
+        const retypepassword = document.getElementById("retypePassword").value
+        if (password === retypepassword) {
+            axios.post(config.rootPath + "/api/users/adduser", {
+                fullname: document.getElementById("inputFullname").value,
+                email: document.getElementById("inputEmail").value,
+                username: document.getElementById("inputUsername").value,
+                password: document.getElementById("inputPassword").value
+            }).then(res =>{
+                alert(res.data.message);
+                window.location.href = "/personal"
+            }).catch(err =>{
+                console.log(err)
+            })
+        } else {
+            alert("Mật khẩu của bạn không khớp nhau!")
+        }
+        
     }
     render() {
         return (
             <div>
-                <div className="container py-5">
-                    <div className="row">
-                        <div className="col-md-12">
-                            {/* <h2 className="text-center mb-5">Bootstrap 4 Register Form</h2> */}
-                            <div className="row">
-                                <div className="col-md-6 mx-auto">
-                                    <div className="card border-secondary">
-                                        <div className="card-header">
-                                            <h3 className="mb-0 my-2">Tạo Tài Khoản</h3>
-                                        </div>
-                                        <div className="card-body">
-                                            <form onSubmit = {this.onSubmit} className="form" >
-                                                <div className="form-group">
-                                                    <label htmlFor="inputFullname">Họ và Tên</label>
-                                                    <input type="text" className="form-control" id="inputFullname" placeholder="Nguyễn Văn A" required=""/>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="inputEmail">Email</label>
-                                                    <input type="email" className="form-control" id="inputEmail" placeholder="email@gmail.com" required=""/>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="inputUsername">Tài khoản</label>
-                                                    <input type="text" className="form-control" id="inputUsername" placeholder="username" required=""/>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="inputPassword">Mật khẩu</label>
-                                                    <input type="password" className="form-control" id="inputPassword" placeholder="password" required=""/>
-                                                </div>
-                                                <div className="form-group">
-                                                    <button type="submit" className="btn btn-success btn-lg float-right">Tạo tài khoản</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+            <button type="button" className="btn btn-secondary btn-lg" data-toggle="modal" data-target="#addUserModal">Tạo tài khoản</button>
+
+            <div className="modal fade" id="addUserModal" tabIndex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="addUserModalLabel text-left">Tạo tài khoản</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                        <form onSubmit = {this.onSubmit} className="form" >
+                            <div className="form-group">
+                                <label htmlFor="inputFullname" className="col-form-label">Họ và Tên</label>
+                                <input type="text" className="form-control" id="inputFullname" placeholder="Nguyễn Văn A" required=""/>
                             </div>
+                            <div className="form-group">
+                                <label htmlFor="inputEmail" className="col-form-label">Email</label>
+                                <input type="email" className="form-control" id="inputEmail" placeholder="email@gmail.com" required=""/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="inputUsername" className="col-form-label">Tài khoản</label>
+                                <input type="text" className="form-control" id="inputUsername" placeholder="username" required=""/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="inputPassword" className="col-form-label">Mật khẩu</label>
+                                <input type="password" className="form-control" id="inputPassword" placeholder="password" required=""/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="retypePassword" className="col-form-label">Nhập lại mật khẩu</label>
+                                <input type="password" className="form-control" id="retypePassword" placeholder="password" required=""/>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                                <button type="submit" className="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                        </div>
                         </div>
                     </div>
                 </div>
