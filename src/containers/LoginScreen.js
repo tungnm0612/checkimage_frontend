@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar'
 
 export default class LoginScreen extends Component {
     state = {
@@ -23,54 +23,33 @@ export default class LoginScreen extends Component {
         console.log(this.state);
         return (
             <div>
-                {/* <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <input onChange={this.handleInputChange} type="text" name="username" id="username" placeholder="Username" />
-                    </div>
-                    <div className="form-group">
-                        <input onChange={this.handleInputChange} type="password" name="password" id="password" placeholder="Password"/>
-                    </div>
-                    <div className="form-group">
-                        <button type="submit">Login</button>
-                    </div> */}
-                    {/* <span id="message-error"></span> */}
-                {/* </form> */}
-                {/* <NavBar
-                    onSearchChanged={this._onSearchChanged}
-                    username={this.props.username}
-                    onLogin={this.props.onLogin}
-                /> */}
-                <div className="img-overlay">
-                    <img className="background-check cover" src="https://images.wallpaperscraft.com/image/palm_bird_swing_150161_1440x900.jpg" alt="background-check" />
+                <div>
+                    <NavBar/>
                 </div>
-                <div className="wrapper">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-5">
-                                <div className="card">
-                                <div className="card-body text-dark">
-                                    {/* <h4>Import File Image to Check</h4> */}
-                                    <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group">
-                                        <label htmlFor="username">Username</label>
-                                        <input onChange={this.handleInputChange}  type="text" autoFocus="autofocus" className="form-control" name="username" id="username" placeholder="Enter your username"/>
-                                        {/* <input type="file" className="form-control-file fileimg" id="exampleFormControlFile1"></input> */}
+                <div className="container form-login">
+                    <div className="row no-gutter">
+                        <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+                        <div className="col-md-8 col-lg-6 bg-form">
+                        <div className="login d-flex align-items-center py-5">
+                            <div className="container">
+                            <div className="row">
+                                <div className="col-md-9 col-lg-8 mx-auto">
+                                <h3 className="login-heading mb-4"><b>Chào mừng bạn quay trở lại!</b></h3>
+                                <form onSubmit={this.handleSubmit}>
+                                    <label htmlFor="inputUsername">Tài khoản </label>
+                                    <input onChange={this.handleInputChange} type="text" name="username" id="inputUsername" className="form-control" required />
+                                    <br/>
+                                    <label htmlFor="inputPassword">Mật khẩu</label>
+                                    <input onChange={this.handleInputChange} type="password" id="inputPassword" name="password" className="form-control" required/>
+
+                                    <div className="custom-control custom-checkbox mb-3">
                                     </div>
-                                    <div className="form-group">
-                                        <label htmlFor="password">Password</label>
-                                        <input onChange={this.handleInputChange} type="password" className="form-control" name="password" id="password" placeholder="Enter your password"/>
-                                    </div>
-                                    <div className="form-group btnlogin">
-                                        <button type="submit" className="btn btn-success btn-block btn-lg mb-2">Login</button>
-                                    </div>
-                                    </form>
-                                </div>
+                                    <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Đăng nhập</button>
+                                </form>
                                 </div>
                             </div>
-                            {/* <div className="col-md-6 align-self-center">
-                                <h1 className="display-4 mb-3 bgfont">Houses <br/> &  <br/> apartments </h1>
-                                <h3 className="mb-4">For sale and for rent.</h3>
-                            </div> */}
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

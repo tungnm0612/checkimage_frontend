@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 export default class CheckImageScreen extends Component {
     state = {
-
+        loading: false
     }
 
     onChange= async (evt) => {
@@ -23,6 +23,9 @@ export default class CheckImageScreen extends Component {
             alert('Bạn chưa chọn file.')
             return;
         }
+        await this.setState({
+            loading: true
+        })
         const formData = await new FormData();
         await formData.append("checkimage", this.state.file);
         const configes = await {
@@ -33,18 +36,25 @@ export default class CheckImageScreen extends Component {
         await axios.post(config.rootPath + '/api/images/checkimage', formData, configes).then( async (res) =>{
             console.log(res.data)
             if (res.data.status === true) {
-                this.setState({
+                await this.setState({
                     // status: res.data.status,
                     message: res.data.message,
                     email: res.data.infoPhotographer.email,
                     fullname: res.data.infoPhotographer.fullname,
-                    transactionHash: res.data.infoPhotographer.transactionHash
+                    transactionHash: res.data.infoPhotographer.transactionHash,
+                    phone: res.data.infoPhotographer.phone
+                })
+                await this.setState({
+                    loading: false
                 })
             } else {
                 if (res.data.status === false) {
-                    this.setState({
+                    await this.setState({
                         // status: res.data.status,
                         message: res.data.message
+                    })
+                    await this.setState({
+                        loading: false
                     })
                 }
             }
@@ -52,6 +62,7 @@ export default class CheckImageScreen extends Component {
     }
     
     render() {
+        const {loading} = this.state;
         
         const info = this.state.message === "Ảnh của bạn là ảnh nguyên gốc" ? (
             // <div className="col">
@@ -62,6 +73,7 @@ export default class CheckImageScreen extends Component {
                         <div className="card-info">
                             <p className="mb-0" id="fullnamePhotographer"> Tác giả: {this.state.fullname}</p>
                             <p id="emailPhotographer">Email: {this.state.email}</p>
+                            <p id="emailPhotographer">Số điện thoại: {this.state.phone}</p>
                             <p id="txHash">Mã giao dịch trên Blockchain: {this.state.transactionHash}</p>
                             {/* <p>&ensp; {this.state.transactionHash}</p> */}
                             <p>Bạn có thể truy cập vào website <a target="_blank" rel="noopener noreferrer" href="https://ropsten.etherscan.io/">ropsten.etherscan.io</a> để kiểm tra giao dịch</p>
@@ -93,13 +105,14 @@ export default class CheckImageScreen extends Component {
                         <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="site-heading intro-lead-in">
                             <h1>Kiểm tra ảnh</h1>
-                            {/* <span class="subheading">A Blog Theme by Start Bootstrap</span> */}
+                            <span class="subheading">Bạn có thể kiểm tra những bức ảnh của mình có đúng là bức ảnh nguyên gốc hay không.</span>
+                            {/* <a className="btn btn-warning btn-xl js-scroll-trigger" href="#checkimage">Kiểm tra ảnh</a> */}
                         </div>
                         </div>
                     </div>
                     </div>
                 </header>
-                    <div className="wrapper" id="checkimage">
+                    <div className="wrapper"  id="checkimage">
                         <div className="container flexcontainer">
                             {/* <div className="row"> */}
                                 <div className="col">
@@ -110,10 +123,20 @@ export default class CheckImageScreen extends Component {
                                             <div className="form-group fileimg">
                                                 {/* <label for="email">Email</label> */}
                                                 {/* <input type="file" autofocus="autofocus" className="form-control" id="email" placeholder="Enter your email"/> */}
-                                                <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage"></input>     
+                                                <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     
                                             </div>
                                             <div className="btncheck">
-                                            <button onClick = {this.onClick} type="button" className="btn btn-success btn-block btn-lg mb-2">Kiểm tra</button>
+                                                <button onClick = {this.onClick} type="button" className="btn btn-success btn-block btn-lg mb-2" disabled={loading}>
+                                                    {/* <b>Kiểm tra</b> */}
+                                                    {loading && (
+                                                        <i
+                                                        className="spinner-border text-light"
+                                                        style={{ marginRight: "5px" }}
+                                                        />
+                                                    )}
+                                                    {loading && <span>Đang kiểm tra</span>}
+                                                    {!loading && <span>Kiểm tra</span>}
+                                                </button>
                                             </div>
                                             </form>
                                         </div>

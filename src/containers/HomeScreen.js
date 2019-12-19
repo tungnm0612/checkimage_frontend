@@ -53,7 +53,7 @@ class HomeScreen extends Component {
         <header className="masthead">
           <div className="container">
             <div className="intro-text">
-              <div className="intro-lead-in">Chào Mừng Bạn Đến Với Website</div>
+              <div className="intro-lead-in">Chào Mừng Bạn Đến Với Photography</div>
               <div className="intro-heading text-uppercase">Nice To Meet You</div>
               <a className="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm Hiểu Thêm</a>
             </div>
@@ -121,7 +121,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Động Vật</h4>
-                  <p className="text-muted">Illustration</p>
+                  {/* <p className="text-muted">Illustration</p> */}
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
@@ -135,7 +135,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Bãi Biển</h4>
-                  <p className="text-muted">Graphic Design</p>
+                  {/* <p className="text-muted">Graphic Design</p> */}
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
@@ -149,7 +149,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Thành Phố</h4>
-                  <p className="text-muted">Identity</p>
+                  {/* <p className="text-muted">Identity</p> */}
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
@@ -163,7 +163,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Núi</h4>
-                  <p className="text-muted">Branding</p>
+                  {/* <p className="text-muted">Branding</p> */}
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
@@ -177,7 +177,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Du Lịch</h4>
-                  <p className="text-muted">Website Design</p>
+                  {/* <p className="text-muted">Website Design</p> */}
                 </div>
               </div>
               <div className="col-md-4 col-sm-6 portfolio-item">
@@ -191,7 +191,7 @@ class HomeScreen extends Component {
                 {/* </a> */}
                 <div className="portfolio-caption">
                   <h4>Thiên Nhiên</h4>
-                  <p className="text-muted">Photography</p>
+                  {/* <p className="text-muted">Photography</p> */}
                 </div>
               </div>
             </div>

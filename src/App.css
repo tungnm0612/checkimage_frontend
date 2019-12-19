@@ -1,7 +1,7 @@
 
-.navbar {
+/* .navbar {
   background: #ffffff;
-}
+} */
 
 .homeimg{
   position: relative;
@@ -60,14 +60,17 @@ img {
   border-radius: 50px;
   padding-left: 40px;
   padding-right: 40px;
-  border-color: #64f38c;
-  background: linear-gradient(45deg, #52c234 0%, #64f38c 100%);
-  background: -moz-linear-gradient(45deg, #52c234 0%, #64f38c 100%);
-  background: -webkit-linear-gradient(45deg, #52c234 0%, #64f38c 100%);
-  box-shadow: 0px 15px 28px -5px #45b649;
-  -webkit-box-shadow: 0px 15px 28px -5px #45b649;
-  -moz-box-shadow: 0px 15px 28px -5px #45b649;
-   
+  border-color:  #fed136;
+  background: linear-gradient(45deg, #fed136 0%, #fed136 100%);
+  background: -moz-linear-gradient(45deg, #fed136 0%, #fed136 100%);
+  background: -webkit-linear-gradient(45deg, #fed136 0%, #fed136 100%);
+  box-shadow: 0px 15px 28px -5px #fed136;
+  -webkit-box-shadow: 0px 15px 28px -5px #fed136;
+  -moz-box-shadow: 0px 15px 28px -5px #fed136;
+}
+
+.btn-warning{
+  color: white;
 }
 .card {
   box-shadow: 1px 11px 70px -20px rgba(0, 0, 0, 0.70);
@@ -77,6 +80,14 @@ img {
   width: 100%;
 }
 
+.modal-content-viewimage{
+  width: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 10%);
+}
+
 @media (min-width: 768px){
   .flexcontainer {
     display: flex;
@@ -84,6 +95,7 @@ img {
  }
  .card-body-info{
   width: 100%;
+  height: 301px;
   }
   .card-check{
     width: 100%;
@@ -145,9 +157,9 @@ img {
   float: left;
 }
 
-.bg-navbar{
+/* .bg-navbar{
   background-color: #f8f9fa;
-}
+} */
 /* trang đăng ký tài khoản */
 
 
@@ -172,14 +184,14 @@ header.masthead .intro-text {
 }
 
 header.masthead .intro-text .intro-lead-in {
-  font-size: 22px;
+  font-size: 22px !important;
   font-style: italic;
   line-height: 22px;
   margin-bottom: 25px;
   font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .intro-lead-in {
-  font-size: 22px;
+  font-size: 22px !important;
   font-style: italic;
   line-height: 22px;
   margin-bottom: 25px;
@@ -187,7 +199,7 @@ header.masthead .intro-text .intro-lead-in {
 }
 
 header.masthead .intro-text .intro-heading {
-  font-size: 50px;
+  font-size: 50px!important;
   font-weight: 700;
   line-height: 50px;
   margin-bottom: 25px;
@@ -200,21 +212,21 @@ header.masthead .intro-text .intro-heading {
     padding-bottom: 200px;
   }
   header.masthead .intro-text .intro-lead-in {
-    font-size: 40px;
+    font-size: 40px !important;
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
     font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   .intro-lead-in {
-    font-size: 40px;
+    font-size: 40px !important;
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
     font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   header.masthead .intro-text .intro-heading {
-    font-size: 75px;
+    font-size: 75px !important;
     font-weight: 700;
     line-height: 75px;
     margin-bottom: 50px;
@@ -229,13 +241,13 @@ header.masthead .intro-text .intro-heading {
 }
 
 .page-section h2.section-heading {
-  font-size: 40px;
+  font-size: 40px !important;
   margin-top: 0;
   margin-bottom: 15px;
 }
 
 .page-section h3.section-subheading {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 400;
   font-style: italic;
   margin-bottom: 75px;
@@ -272,7 +284,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
-  font-size: 20px;
+  font-size: 20px !important;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -305,7 +317,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 #portfolio .portfolio-item .portfolio-caption p {
-  font-size: 16px;
+  font-size: 16px !important;
   font-style: italic;
   margin: 0;
   font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -329,7 +341,7 @@ header.masthead .intro-text .intro-heading {
 
 .portfolio-item img{
   height: 233px;
-  /* width: 100%; */
+  width: 100%;  
 }
 
 .portfolio-modal .modal-dialog {
@@ -343,7 +355,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .modal-content h2 {
-  font-size: 3em;
+  font-size: 3em !important;
   margin-bottom: 15px;
 }
 
@@ -352,7 +364,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .modal-content p.item-intro {
-  font-size: 16px;
+  font-size: 16px !important;
   font-style: italic;
   margin: 20px 0 30px;
   font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -410,9 +422,17 @@ header.masthead .intro-text .intro-heading {
 
 .page-section-contract {
   padding: 4rem 0;
+  background-color: #8c98a3!important;
+  color: white !important;
 }
 .justify-content-center {
   justify-content: center !important;
+}
+.justify-content-center h2 {
+  color: white !important;
+}
+.justify-content-center p {
+  color: white !important;
 }
 
 /* footer */
@@ -434,9 +454,9 @@ button.bg-light:focus {
   padding-bottom: 3rem !important;
 }
 
-.text-muted {
+/* .text-muted {
   color: #6c757d !important;
-}
+} */
 
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
@@ -448,7 +468,7 @@ header.bgPersonal{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url('./img/background/bgPersonal.jpg');
+  background-image: url('./img/background/bgPersonal3.jpeg');
 }
 header.bgCheckImage{
   margin-bottom: 50px;
@@ -457,7 +477,7 @@ header.bgCheckImage{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url('./img/background/bgCheck.jpg');
+  background-image: url('./img/background/bgCheck2.jpeg');
 }
 
 header.bgUploadImage{
@@ -467,7 +487,7 @@ header.bgUploadImage{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url('./img/background/bgUpload.jpg');
+  background-image: url('./img/background/bgUpload2.jpeg');
 }
 
 header.masthead-test .overlay {
@@ -477,7 +497,7 @@ header.masthead-test .overlay {
   height: 100%;
   width: 100%;
   background-color: #212529;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 header.masthead-test .page-heading,
@@ -505,13 +525,13 @@ header.masthead-test .site-heading {
 
 header.masthead-test .page-heading h1,
 header.masthead-test .site-heading h1 {
-  font-size: 50px;
+  font-size: 50px !important;
   margin-top: 0;
 }
 
 header.masthead-test .page-heading .subheading,
 header.masthead-test .site-heading .subheading {
-  font-size: 24px;
+  font-size: 24px !important;
   font-weight: 300;
   line-height: 1.1;
   display: block;
@@ -522,12 +542,12 @@ header.masthead-test .site-heading .subheading {
 @media only screen and (min-width: 768px) {
   header.masthead-test .page-heading h1,
   header.masthead-test .site-heading h1 {
-    font-size: 80px;
+    font-size: 80px !important;
   }
 }
 
 header.masthead-test .post-heading h1 {
-  font-size: 35px;
+  font-size: 35px !important;
 }
 
 header.masthead-test .post-heading .meta,
@@ -537,14 +557,14 @@ header.masthead-test .post-heading .subheading {
 }
 
 header.masthead-test .post-heading .subheading {
-  font-size: 24px;
+  font-size: 24px !important;
   font-weight: 600;
   margin: 10px 0 30px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 header.masthead-test .post-heading .meta {
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: 300;
   font-style: italic;
   font-family: 'Lora', 'Times New Roman', serif;
@@ -556,10 +576,10 @@ header.masthead-test .post-heading .meta a {
 
 @media only screen and (min-width: 768px) {
   header.masthead-test .post-heading h1 {
-    font-size: 55px;
+    font-size: 55px !important;
   }
   header.masthead-test .post-heading .subheading {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 }
 
@@ -573,7 +593,226 @@ header.masthead-test .post-heading .meta a {
 .tableadmin{
   text-align: center;
 }
+/* .btn-addUser{
+  text-align: center;
+} */
+#addUserModal{
+  text-align: left;
+}
 
 .listUser{
   padding-bottom: 50px;
+}
+
+/* =========================================== */
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('./img/background/bgLogin3.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-form{
+  background-color: #f8f9fa;
+}
+.form-login{
+  padding-top: 100px;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px !important;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+
+.col-form-label{
+  text-align: left ;
+}
+
+/* ------NavBar------- */
+
+#mainNav {
+  background-color: #212529;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  right: 0;
+  padding: 13px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  background-color: #fed136;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-brand {
+  color: #fed136;
+  font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  color: #fec503;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 90%;
+  font-weight: 400;
+  padding: 0.75em 0;
+  letter-spacing: 1px;
+  color: white;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #fed136;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    /* padding-top: 25px;
+    padding-bottom: 25px; */
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    transition: all 0.3s;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 1em !important;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
+.tableInfoPersonal{
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .nav-item{
+    width: 50%;
+    padding-left: 0px;
+  }
+  .dropdown-menu{
+    background-color: #212529;
+    color: white;
+  }
+  .dropdown-item{
+    color: white;
+  }
+
+  .personal-item{
+    display: none;
+  }
 }

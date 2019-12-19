@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import "./agency.min.css"
 import "./App.css";
 import config from './config';
 import axios from "./axios";
@@ -10,7 +11,7 @@ import HomeScreen from "./containers/HomeScreen";
 import LoginScreen from "./containers/LoginScreen";
 import CheckImageScreen from './containers/CheckImageScreen';
 import UploadImageScreen from './containers/UploadImageScreen';
-import AddUserScreen from './containers/AddUserScreen';
+// import AddUserScreen from './containers/AddUserScreen';
 import ChangePassword from './containers/ChangePassword';
 import PersonalScreen from './containers/PersonalScreen';
 
@@ -127,7 +128,7 @@ class App extends Component {
                 />;
               }}
             />
-            <Route
+            {/* <Route
               exact
               path="/admin/adduser"
               render={props => {
@@ -137,7 +138,7 @@ class App extends Component {
                   onLogin={this._onLogin}
                 />;
               }}
-            />
+            /> */}
             <Route
               exact
               path="/admin/changepassword"
