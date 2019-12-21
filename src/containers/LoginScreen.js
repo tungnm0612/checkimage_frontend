@@ -6,6 +6,9 @@ export default class LoginScreen extends Component {
         username: '',
         password: '',
     }
+    componentDidMount(){
+        document.title = "OriginalPhotos - Đăng nhập"
+    }
 
     handleInputChange = (event) =>{
         const name = event.target.name;

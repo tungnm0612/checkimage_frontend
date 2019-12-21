@@ -12,14 +12,9 @@ export default class PersonalScreen extends Component {
         infoPersonal: []
     }
 
-    // componentDidMount(){
-    //     const idUser = this.props.id
-    //     axios.post(config.rootPath + '/api/images/personal', {idUser})
-    //         .then( res =>{
-    //             console.log(res.data)
-    //         }
-    //     )
-    // }
+    componentDidMount(){
+        document.title = "OriginalPhotos - Trang cá nhân"
+    }
     
     onSubmitChangePassword = (event) => {
         event.preventDefault();

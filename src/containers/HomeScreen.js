@@ -20,17 +20,9 @@ class HomeScreen extends Component {
     searchString: ""
   };
 
-  componentDidMount() {
-    // axios
-    //   .get("/api/images")
-    //   .then(data => {
-    //     console.log(data.data);
-    //     this.setState({
-    //       images: data.data
-    //     });
-    //   })
-    //   .catch(err => console.error(err));
-  }
+  componentDidMount(){
+    document.title = "OriginalPhotos - Trang chủ"
+}
 
   _onSearchChanged = text => this.setState({ searchString: text });
 

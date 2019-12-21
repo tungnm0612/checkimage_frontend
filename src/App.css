@@ -636,6 +636,11 @@ header.masthead-test .post-heading .meta a {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 991px){
+  .bg-image {
+    display: none !important;
+  }
+}
 .bg-form{
   background-color: #f8f9fa;
 }
@@ -802,15 +807,6 @@ header.masthead-test .post-heading .meta a {
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 1em !important;
   }
-  /* #mainNav.navbar-shrink {
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: #212529;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  } */
 }
 
 .headroom {
@@ -831,10 +827,19 @@ header.masthead-test .post-heading .meta a {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .nav-item{
-    width: 50%;
+    /* width: 40%; */
     padding-left: 0px;
+  }
+  .navhome{
+    width: 88.50px !important;
+  }
+  .navupload{
+    width: 95.96px !important;
+  }
+  .navcheck{
+    width: 109.8px !important;
   }
   .dropdown-menu{
     background-color: #212529;
@@ -843,7 +848,6 @@ header.masthead-test .post-heading .meta a {
   .dropdown-item{
     color: white;
   }
-
   .personal-item{
     display: none;
   }

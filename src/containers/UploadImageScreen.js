@@ -13,6 +13,10 @@ export default class UploadImageScreen extends Component {
     state = {
         loading: false
     }
+
+    componentDidMount(){
+        document.title = "OriginalPhotos - Tải ảnh lên"
+    }
      
     onChange= async (evt) => {
         evt.preventDefault();
