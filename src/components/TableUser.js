@@ -171,6 +171,7 @@ export default class TableUser extends Component {
                 title: "STT",
                 dataIndex: "key",
                 key: "key",
+                align: 'center',
                 // width: 60,
                 // fixed: 'left',
             },
@@ -178,13 +179,21 @@ export default class TableUser extends Component {
                 title: "Mã giao dịch",
                 dataIndex: "transactionHash",
                 // width: 500,
-                key: "transactionHash"
+                key: "transactionHash",
+                align: 'center'
+            },
+            {
+                title: "Mã băm của ảnh",
+                dataIndex: "hashImage",
+                key: "hashImage",
+                align: 'center'
             },
             {
                 title: "Thời gian tạo",
                 dataIndex: "createdAt",
                 // width: 100,
                 key: "createdAt",
+                align: 'center',
                 // fixed: 'right',
             },
         ]
@@ -193,39 +202,45 @@ export default class TableUser extends Component {
             {
                 title: "STT",
                 dataIndex: "key",
-                key: "key"
+                key: "key",
+                align: 'center',
             },
             {
               title: 'Tài Khoản',
               dataIndex: 'username',
               key: 'username',
+              align: 'center',
             //   render: text => <a data-toggle="modal" data-target="#imageofuser">{text}</a>,
               render: (text, record, index) =>{
                   return (
                     // <form onSubmit={this.onSubmitViewIamge} id="my_form">
-                        <a onClick={()=>this.onViewImage(record)} data-toggle="modal" data-target="#imageofuser">{text}</a>
+                        <a className="tagviewimguser" onClick={()=>this.onViewImage(record)} data-toggle="modal" data-target="#imageofuser">{text}</a>
                     // </form>
                   )
-              }
+              },
             },
             {
               title: 'Họ và Tên',
               dataIndex: 'fullname',
-              key: 'fullname'
+              key: 'fullname',
+              align: 'center'
             },
             {
               title: 'Email',
               dataIndex: 'email',
-              key: 'email'
+              key: 'email',
+              align: 'center'
             },
             {
                 title: 'Số điện thoại',
                 dataIndex: 'phone',
-                key: 'phone'
+                key: 'phone',
+                align: 'center'
             },
             {
                 title: 'Quyền đăng nhập',
                 key: 'disabled',
+                align: 'center',
                 render: (text, record, index) => {
                     if (record.disabled === false) {
                         if (record.username === "admin") {
@@ -258,14 +273,15 @@ export default class TableUser extends Component {
                 }
             },
             {
+                align: 'center',
                 key: "changepassword",
                 render: (text, record, index) =>(
                     <span>
-                        <button class="btn btn-info btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changePasswordModal">
+                        <button className="btn btn-info btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changePasswordModal">
                             Đổi mật khẩu
                         </button>
                         <Divider type="vertical" />
-                        <button class="btn btn-warning btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changeInfoModal">
+                        <button className="btn btn-warning btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changeInfoModal">
                             Sửa thông tin
                         </button>
                     </span>
@@ -287,7 +303,7 @@ export default class TableUser extends Component {
                         <div className="modal-body">
                             <form onSubmit={this.onSubmitChangeActive}>
                                 <div className="form-group">
-                                    Bạn có muốn bật hoạt động của tài khoản này không?
+                                    Bạn có muốn tắt hoạt động của tài khoản này không?
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -312,7 +328,7 @@ export default class TableUser extends Component {
                         <div className="modal-body">
                             <form onSubmit={this.onSubmitChangeActive}>
                                 <div className="form-group">
-                                    Bạn có muốn tắt hoạt động của tài khoản này không?
+                                    Bạn có muốn bật hoạt động của tài khoản này không?
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -358,19 +374,19 @@ export default class TableUser extends Component {
                 <div className="modal fade" id="imageofuser" tabIndex="-1" role="dialog" aria-labelledby="imageofuserLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content modal-content-viewimage">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="imageofuserLabel">Danh sách giao dịch của tài khoản {this.state.username}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <Table columns={columnsImage} dataSource={this.state.imageofuser}/>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                            {/* <button type="button" className="btn btn-primary">Save changes</button> */}
-                        </div>
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="imageofuserLabel">Danh sách giao dịch của tài khoản {this.state.username}</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <Table columns={columnsImage} dataSource={this.state.imageofuser}/>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                {/* <button type="button" className="btn btn-primary">Save changes</button> */}
+                            </div>
                         </div>
                     </div>
                 </div>

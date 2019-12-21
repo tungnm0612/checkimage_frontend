@@ -6,32 +6,6 @@ export default class Footer extends Component {
     render() {
         return (
             <div>
-                <section id="portfolio">
-                    <div class="container-fluid p-0">
-                    <div class="row no-gutters">
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt=""/>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt=""/>
-                        
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt=""/>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt=""/>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt=""/>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt=""/>
-                        </div>
-                    </div>
-                    </div>
-                </section>
-
                 {/* <!-- Contact Section --> */}
                 <section className="page-section-contract" id="contact">
                     <div className="container">

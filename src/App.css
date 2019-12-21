@@ -81,14 +81,14 @@ img {
 }
 
 .modal-content-viewimage{
-  width: 900px;
+  width: 1100px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, 10%);
 }
 
-@media (min-width: 768px){
+@media (min-width: 992px){
   .flexcontainer {
     display: flex;
     flex-direction: row;
@@ -103,7 +103,7 @@ img {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 991px){
   .uploadcol{
     display: none;
   }
@@ -119,7 +119,7 @@ img {
   margin-left: 5%;
   margin-right: 5%;
 }
-@media (max-width: 768px){
+@media (max-width: 992px){
   .card-body-info{
     padding-top: 20px;
     width: 100%;
@@ -457,7 +457,19 @@ button.bg-light:focus {
 /* .text-muted {
   color: #6c757d !important;
 } */
+.bgloginscreen{
+  background-color: #007BFF;
+}
+@media (max-width: 768px){
+  .form-login{
+    padding-top: 0px !important;
+  }
+}
 
+.file-field.big .file-path-wrapper {
+  height: 3.2rem; }
+  .file-field.big .file-path-wrapper .file-path {
+  height: 3rem; }
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
 
@@ -477,7 +489,7 @@ header.bgCheckImage{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url('./img/background/bgCheck2.jpeg');
+  background-image: url('./img/background/bgcheck4.jpg');
 }
 
 header.bgUploadImage{
@@ -487,7 +499,7 @@ header.bgUploadImage{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url('./img/background/bgUpload2.jpeg');
+  background-image: url('./img/background/bgUpload5.jpeg');
 }
 
 header.masthead-test .overlay {
@@ -498,6 +510,9 @@ header.masthead-test .overlay {
   width: 100%;
   background-color: #212529;
   opacity: 0.1;
+}
+header.masthead-test .overlayupload {
+  opacity: 0.4 !important;
 }
 
 header.masthead-test .page-heading,
@@ -732,9 +747,12 @@ header.masthead-test .post-heading .meta a {
 
 /* ------NavBar------- */
 
-#mainNav {
-  background-color: #212529;
+@media (max-width: 991px){
+  #mainNav {
+    background-color: #212529;
+  }
 }
+
 
 #mainNav .navbar-toggler {
   font-size: 12px;
@@ -775,7 +793,7 @@ header.masthead-test .post-heading .meta a {
     padding-bottom: 25px; */
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    /* background-color: transparent; */
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -784,7 +802,7 @@ header.masthead-test .post-heading .meta a {
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 1em !important;
   }
-  #mainNav.navbar-shrink {
+  /* #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
     background-color: #212529;
@@ -792,7 +810,21 @@ header.masthead-test .post-heading .meta a {
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
     padding: 12px 0;
-  }
+  } */
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+.headroom--not-top{
+  background-color: #212529;
 }
 
 .tableInfoPersonal{
@@ -815,4 +847,51 @@ header.masthead-test .post-heading .meta a {
   .personal-item{
     display: none;
   }
+}
+
+
+#portfolio .container-fluid {
+  max-width: 1920px;
+}
+
+#portfolio .container-fluid .portfolio-box {
+  position: relative;
+  display: block;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  background: rgba(244, 98, 58, 0.9);
+  transition: opacity 0.25s ease;
+  text-align: center;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name {
+  font-size: 1.2rem;
+}
+
+#portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+
+.port{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

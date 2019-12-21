@@ -22,7 +22,7 @@ export default class LoginScreen extends Component {
     render() {
         console.log(this.state);
         return (
-            <div>
+            <div className="bgloginscreen">
                 <div>
                     <NavBar/>
                 </div>
@@ -34,7 +34,7 @@ export default class LoginScreen extends Component {
                             <div className="container">
                             <div className="row">
                                 <div className="col-md-9 col-lg-8 mx-auto">
-                                <h3 className="login-heading mb-4"><b>Chào mừng bạn quay trở lại!</b></h3>
+                                <h3 className="login-heading mb-4"><b>Đăng nhập</b></h3>
                                 <form onSubmit={this.handleSubmit}>
                                     <label htmlFor="inputUsername">Tài khoản </label>
                                     <input onChange={this.handleInputChange} type="text" name="username" id="inputUsername" className="form-control" required />

@@ -3,9 +3,10 @@ import NavBar from '../components/NavBar';
 import axios from 'axios';
 import config from '../config';
 import Footer  from '../components/Footer';
+import Portfolio from '../components/Portfolio';
+// import { Upload, message, Button, Icon } from 'antd';
 // import web3 from '../web3';
 // import image from '../image';
-// import enableMetamask from '../enableMetamask';
 // import Web3 from 'web3';
 
 export default class UploadImageScreen extends Component {
@@ -58,6 +59,23 @@ export default class UploadImageScreen extends Component {
 
 
     render() {
+        // const changefile = {
+        //     name: 'file',
+        //     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+        //     headers: {
+        //       authorization: 'authorization-text',
+        //     },
+        //     onChange(info) {
+        //       if (info.file.status !== 'uploading') {
+        //         console.log(info.file, info.fileList);
+        //       }
+        //       if (info.file.status === 'done') {
+        //         message.success(`${info.file.name} file uploaded successfully`);
+        //       } else if (info.file.status === 'error') {
+        //         message.error(`${info.file.name} file upload failed.`);
+        //       }
+        //     },
+        //   };
         const {loading} = this.state;
         return (
             <div>
@@ -70,13 +88,13 @@ export default class UploadImageScreen extends Component {
                     />
                 </div>
                 <header className="masthead-test bgUploadImage" >
-                    <div className="overlay"></div>
+                    <div className="overlay overlayupload"></div>
                     <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-md-10 mx-auto">
                         <div className="site-heading intro-lead-in">
                             <h1>Tải ảnh lên</h1>
-                            <span class="subheading">Bạn có thể đăng tải những bức ảnh nguyên gốc của mình lên Blockchain.</span>
+                            <span className="subheading">Bạn có thể đăng tải những bức ảnh nguyên gốc của mình lên Blockchain.</span>
                             {/* <span className="subheading">A Blog Theme by Start Bootstrap</span> */}
                         </div>
                         </div>
@@ -94,9 +112,12 @@ export default class UploadImageScreen extends Component {
                                             <h4>Chọn ảnh bạn muốn tải lên</h4>
                                             <form encType="multipart/form-data">
                                                 <div className="form-group fileimg">
-                                                    {/* <label for="email">Email</label> */}
-                                                    {/* <input type="file" autofocus="autofocus" className="form-control" id="email" placeholder="Enter your email"/> */}
                                                     <input onChange = {this.onChange} type="file" className="form-control-file" name="uploadimage" id="uploadimage" accept="image/*"></input>
+                                                    {/* <Upload {...changefile}>
+                                                        <Button>
+                                                        <Icon type="upload" /> Chọn ảnh tải lên
+                                                        </Button>
+                                                    </Upload>, */}
                                                 </div>
                                                 <div className="btncheck">
                                                     <button  onClick = {this.onClick}  type="submit" className="btn btn-success btn-block btn-lg mb-2" disabled={loading}>
@@ -119,6 +140,9 @@ export default class UploadImageScreen extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="port">
+                    <Portfolio/>
                 </div>
                 <div>
                     <Footer/>

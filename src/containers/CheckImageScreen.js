@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import axios from 'axios';
 import config from '../config';
 import Footer from '../components/Footer';
-// import image from '../image';
+import Portfolio from '../components/Portfolio';
 
 export default class CheckImageScreen extends Component {
     state = {
@@ -98,14 +98,14 @@ export default class CheckImageScreen extends Component {
                         onLogin={this.props.onLogin}
                     />
                 </div>
-                <header class="masthead-test bgCheckImage" >
-                    <div class="overlay"></div>
-                    <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="site-heading intro-lead-in">
+                <header className="masthead-test bgCheckImage" >
+                    <div className="overlay"></div>
+                    <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 col-md-10 mx-auto">
+                        <div className="site-heading intro-lead-in">
                             <h1>Kiểm tra ảnh</h1>
-                            <span class="subheading">Bạn có thể kiểm tra những bức ảnh của mình có đúng là bức ảnh nguyên gốc hay không.</span>
+                            <span className="subheading">Bạn có thể kiểm tra những bức ảnh của mình có đúng là bức ảnh nguyên gốc hay không.</span>
                             {/* <a className="btn btn-warning btn-xl js-scroll-trigger" href="#checkimage">Kiểm tra ảnh</a> */}
                         </div>
                         </div>
@@ -121,9 +121,8 @@ export default class CheckImageScreen extends Component {
                                             <h4 className="" >Chọn ảnh bạn muốn kiểm tra</h4>
                                             <form encType="multipart/form-data">
                                             <div className="form-group fileimg">
-                                                {/* <label for="email">Email</label> */}
-                                                {/* <input type="file" autofocus="autofocus" className="form-control" id="email" placeholder="Enter your email"/> */}
                                                 <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     
+                                               
                                             </div>
                                             <div className="btncheck">
                                                 <button onClick = {this.onClick} type="button" className="btn btn-success btn-block btn-lg mb-2" disabled={loading}>
@@ -149,6 +148,9 @@ export default class CheckImageScreen extends Component {
                         </div>
                     </div>
                 {/* </div> */}
+                <div className="port">
+                    <Portfolio/>
+                </div>
                 <div>
                     <Footer/>
                 </div>

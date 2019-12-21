@@ -136,26 +136,30 @@ export default class PersonalScreen extends Component {
             {
                 title: "Tài khoản",
                 dataIndex: "username",
-                key: "username"
+                key: "username",
+                align: 'center'
             },
             {
                 title: "Họ và Tên",
                 dataIndex: "fullname",
-                key: "fullname"
+                key: "fullname",
+                align: 'center'
             },
             {
                 title: "Email",
                 dataIndex: "email",
-                key: "email"
+                key: "email",
+                align: 'center'
             },
             {
                 title: "Số điện thoại",
                 dataIndex: "phone",
-                key: "phone"
+                key: "phone",align: 'center'
             },
             {   
                 width: 260,
                 key: "changepassword",
+                align: 'center',
                 render: () => (
                     <span>
                         <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#changePasswordPersonalModal">Đổi mật khẩu</button>
@@ -170,22 +174,31 @@ export default class PersonalScreen extends Component {
             {
                 title: "STT",
                 dataIndex: "key",
-                key: "key"
+                key: "key",
+                align: 'center'
             },
             {
                 title: "Mã giao dịch",
                 dataIndex: "transactionHash",
-                key: "transactionHash"
+                key: "transactionHash",
+                align: 'center'
+            },
+            {
+                title: "Mã băm của ảnh",
+                dataIndex: "hashImage",
+                key: "hashImage",
+                align: 'center'
             },
             {
                 title: "Thời gian tạo",
                 dataIndex: "createdAt",
-                key: "createdAt"
+                key: "createdAt",
+                align: 'center'
             },
         ]
 
-        const tableUser = this.props.username === "admin" ? (
-            <TableUser/>
+        const tableUser = this.props.id === "5ddd58a4db459b05200cb835" ? (
+            <TableUser />
         ):(
             <div className="container tableInfoPersonal">
                 <h1 className="title-tableUser">Thông tin tài khoản của bạn</h1>

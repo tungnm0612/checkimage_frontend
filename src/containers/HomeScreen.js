@@ -53,7 +53,7 @@ class HomeScreen extends Component {
         <header className="masthead">
           <div className="container">
             <div className="intro-text">
-              <div className="intro-lead-in">Chào Mừng Bạn Đến Với Photography</div>
+              <div className="intro-lead-in">Chào Mừng Bạn Đến Với Original Photos</div>
               <div className="intro-heading text-uppercase">Nice To Meet You</div>
               <a className="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm Hiểu Thêm</a>
             </div>
