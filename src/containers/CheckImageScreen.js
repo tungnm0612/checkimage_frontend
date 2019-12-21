@@ -124,39 +124,23 @@ export default class CheckImageScreen extends Component {
                                         <div className="card-body text-dark title-upload">
                                             <h4 className="" >Chọn ảnh bạn muốn kiểm tra</h4>
                                             <form encType="multipart/form-data">
-                                            <div class="frame">
-                                                <div class="center">
-                                                    <div class="title">
-                                                        <h1>Drop file to upload</h1>
-                                                    </div>
-
-                                                    <div class="dropzone">
-                                                        <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                                                        <input type="file" class="upload-input" />
-                                                    </div>
-
-                                                    <button type="button" class="btn" name="uploadbutton">Upload file</button>
-
-                                                </div>
+                                            <div className="form-group fileimg">
+                                                <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     
+                                               
                                             </div>
-                                                {/* <div className="form-group fileimg">s
-                                                    <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                                                    <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     
-                                                
-                                                </div>
-                                                <div className="btncheck">
-                                                    <button onClick = {this.onClick} type="button" className="btn btn-success btn-block btn-lg mb-2" disabled={loading}>
-                                                       
-                                                        {loading && (
-                                                            <i
-                                                            className="spinner-border text-light"
-                                                            style={{ marginRight: "5px" }}
-                                                            />
-                                                        )}
-                                                        {loading && <span>Đang kiểm tra</span>}
-                                                        {!loading && <span>Kiểm tra</span>}
-                                                    </button>
-                                                </div> */}
+                                            <div className="btncheck">
+                                                <button onClick = {this.onClick} type="button" className="btn btn-success btn-block btn-lg mb-2" disabled={loading}>
+                                                    {/* <b>Kiểm tra</b> */}
+                                                    {loading && (
+                                                        <i
+                                                        className="spinner-border text-light"
+                                                        style={{ marginRight: "5px" }}
+                                                        />
+                                                    )}
+                                                    {loading && <span>Đang kiểm tra</span>}
+                                                    {!loading && <span>Kiểm tra</span>}
+                                                </button>
+                                            </div>
                                             </form>
                                         </div>
                                     </div>
