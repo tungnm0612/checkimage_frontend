@@ -833,14 +833,18 @@ header.masthead-test .post-heading .meta a {
     padding-left: 0px;
   }
   .navhome{
-    width: 88.50px !important;
+    width: 100px !important;
   }
   .navupload{
-    width: 95.96px !important;
+    width: 108px !important;
   }
   .navcheck{
-    width: 109.8px !important;
+    width: 122px !important;
   }
+  .navprofile{
+    width: 30%;
+  }
+  
   .dropdown-menu{
     background-color: #212529;
     color: white;

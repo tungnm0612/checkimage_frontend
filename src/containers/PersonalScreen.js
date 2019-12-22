@@ -157,9 +157,9 @@ export default class PersonalScreen extends Component {
                 align: 'center',
                 render: () => (
                     <span>
-                        <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#changePasswordPersonalModal">Đổi mật khẩu</button>
+                        <button className="btn btn-warning btn-sm" data-toggle="modal" data-target="#changePasswordPersonalModal">Đổi mật khẩu</button>
                         <Divider type="vertical" />
-                        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#changeInfoPersonalModal">Sửa thông tin</button>
+                        <button className="btn btn-info btn-sm" data-toggle="modal" data-target="#changeInfoPersonalModal">Sửa thông tin</button>
                     </span>
                 )
             },

@@ -34,7 +34,7 @@ class NavBar extends Component {
                 <li className="nav-item">
                   {/* <a className="nav-link js-scroll-trigger" href="#team">Team</a> */}
                 </li>
-                <li className="col nav-item">
+                <li className="col navprofile nav-item">
                   <ProfilePanel
                     // className ="col"
                     username={this.props.username}

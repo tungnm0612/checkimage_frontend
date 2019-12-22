@@ -55,7 +55,12 @@ export default class UploadImageScreen extends Component {
                 await this.setState({
                     loading: false
                 })
-                await alert(res.data.message);
+                if(res.data.success === true){
+                    await alert(res.data.message);
+                    window.location.href = "/uploadimage"
+                }else{
+                    await alert(res.data.message);
+                }
             }).catch(err =>{
                 console.log(err)
             })
