@@ -102,6 +102,9 @@ img {
     height: 302.8px;
   }
 }
+.text-info{
+  text-align: center;
+}
 
 @media (max-width: 991px){
   .uploadcol{
@@ -124,7 +127,9 @@ img {
     padding-top: 20px;
     width: 100%;
   }
-
+  .card-body-info-false{
+    height: 279px;
+  }
 }
 
 .alert-heading{
