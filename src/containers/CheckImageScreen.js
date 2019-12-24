@@ -131,6 +131,7 @@ export default class CheckImageScreen extends Component {
                                     <div className="card card-check">
                                         <div className="card-body text-dark title-upload">
                                             <h4 className="" >Chọn ảnh bạn muốn kiểm tra</h4>
+                                            <hr/>
                                             <form encType="multipart/form-data">
                                             <div className="form-group fileimg">
                                                 <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     
