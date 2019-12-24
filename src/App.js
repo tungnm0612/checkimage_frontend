@@ -35,7 +35,7 @@ class App extends Component {
             id: response.data.user.id
           });
         }else {
-          // this.props.history.push("/")
+          this.props.history.push("/")
         }
       }).catch(error =>{
         console.log(error)

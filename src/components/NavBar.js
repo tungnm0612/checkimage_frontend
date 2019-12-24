@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Headroom from "headroom.js";
 import ProfilePanel from "./ProfilePanel";
+import CheckImage from './CheckImage';
+import Home from './Home';
+import UploadImage from "./UploadImage";
 
 class NavBar extends Component {
 
@@ -12,7 +15,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div onScroll={this.listenScrollEvent}>
+      <div>
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
           <div className="container">
             <a className="navbar-brand js-scroll-trigger" href="/"><b>Original Photos </b></a>
@@ -23,13 +26,13 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav  ml-auto">
                 <li className="nav-item navhome text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/"><b>Trang chủ</b></a>
+                  <Home />
                 </li>
                 <li className="nav-item navcheck text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/checkimage"><b>Kiểm tra ảnh</b></a>
+                  <CheckImage/>
                 </li>
                 <li className="nav-item navupload text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/uploadimage"><b>Tải ảnh lên</b></a>
+                  <UploadImage/>
                 </li>
                 <li className="nav-item">
                   {/* <a className="nav-link js-scroll-trigger" href="#team">Team</a> */}
