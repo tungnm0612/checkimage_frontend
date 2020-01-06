@@ -130,6 +130,7 @@ export default class TableUser extends Component {
                     key: index + 1,
                     _id: row._id,
                     idUser: row.idUser,
+                    nameImage: row.nameImage,
                     hashImage: row.hashImage,
                     transactionHash: row.transactionHash,
                     createdAt: row.createdAt,
@@ -174,6 +175,12 @@ export default class TableUser extends Component {
                 align: 'center',
                 // width: 60,
                 // fixed: 'left',
+            },
+            {
+                title: "Tên ảnh",
+                dataIndex: "nameImage",
+                key: "nameImage",
+                align: "center"
             },
             {
                 title: "Mã giao dịch",
