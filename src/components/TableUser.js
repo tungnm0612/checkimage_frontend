@@ -189,12 +189,17 @@ export default class TableUser extends Component {
                 align: 'center'
             },
             {
-                title: "Thời gian tạo",
+                title: "Thời gian tạo (GMT)",
                 dataIndex: "createdAt",
                 // width: 100,
                 key: "createdAt",
                 align: 'center',
                 // fixed: 'right',
+                render: (text) =>{
+                    return (
+                     <p>{text.replace(/[T]/g, " ").substr(0, 19)}</p>
+                    )
+                }
             },
         ]
 
@@ -213,7 +218,7 @@ export default class TableUser extends Component {
             //   render: text => <a data-toggle="modal" data-target="#imageofuser">{text}</a>,
               render: (text, record, index) =>{
                   return (
-                    // <form onSubmit={this.onSubmitViewIamge} id="my_form">
+                    // <form onSubmit={this.onSubmitViewIamge} id="my_form"> 
                         <Link className="tagviewimguser" onClick={()=>this.onViewImage(record)} data-toggle="modal" to="" data-target="#imageofuser">{text}</Link>
                     // </form>
                   )
@@ -311,7 +316,7 @@ export default class TableUser extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="enableActiveModalLabel">Bật hoạt động</h5>
+                            <h5 className="modal-title" id="enableActiveModalLabel">Tắt hoạt động</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -336,7 +341,7 @@ export default class TableUser extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="disableActiveModalLabel">Tắt hoạt động</h5>
+                            <h5 className="modal-title" id="disableActiveModalLabel">Bật hoạt động</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
